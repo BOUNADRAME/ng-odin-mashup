@@ -1,0 +1,32 @@
+{
+  "projectName": "ng-odin-mashup",
+  "proxy": {
+    "/m3api-rest": {
+      "target": "https://be-dev.escal.local:32008",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "info"
+    },
+    "/mne": {
+      "target": "https://be-dev.escal.local:32008",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "info"
+    },
+    "/ca": {
+      "target": "https://be-dev.escal.local:32008",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "info"
+    },
+    "/ODIN_DEV_TENANT": {
+      "target": "ODIN_ION_PROXY_TARGET",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/ODIN_DEV_TENANT": "/ODIN_ION_PROXY_TENANT"
+      },
+      "logLevel": "info"
+    }
+  }
+}

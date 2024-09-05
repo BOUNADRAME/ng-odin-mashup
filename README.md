@@ -25,3 +25,41 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## setup
+
+# Basic Odin project
+
+This project was generated with Odin CLI, a command line interface for developing M3 web applications.
+
+```
+
+npm install @infor-up/m3-odin --save
+npm install @infor-up/m3-odin-angular --save
+npm install @infor-up/m3-odin-cli --save
+
+```
+
+```
+
+```
+
+# start with proxy
+
+ng serve --proxy-config proxy.conf.json
+
+# setup m3 url
+
+odin set m3-proxy https://be-dev.escal.local:32008
+
+# setup tenant
+
+odin set ion-proxy https://ionserver/ODIN_ION_PROXY_TARGET
+
+# start ng odin project
+
+odin serve
+
+```
+
+```
