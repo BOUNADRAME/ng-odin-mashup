@@ -1,1 +1,4 @@
-<p>search component</p>
+<p>SearchComponent</p>
+<div *ngIf="store$ | async as store">
+  <div>counter: {{ store.counter }}</div>
+</div>

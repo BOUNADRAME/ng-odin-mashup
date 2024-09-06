@@ -1,29 +1,19 @@
-import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { CoreBase } from '@infor-up/m3-odin';
+import { CounterService } from '../../store/CounterService';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatIconModule,
-    MatDatepickerModule,
-    MatButtonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
 })
 export class SearchComponent extends CoreBase {
+  private counterService = inject(CounterService);
+  store$ = this.counterService.useStore();
+
   constructor() {
     super('SearchComponent');
   }

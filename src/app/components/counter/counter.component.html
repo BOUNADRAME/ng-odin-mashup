@@ -1,0 +1,9 @@
+<p>CouterComponent</p>
+<div *ngIf="store$ | async as store">
+  <div>
+    <button mat-button (click)="store.decrement()">minus(-)</button>
+    <button mat-button (click)="store.increment()" style="margin-left: 0.5rem">
+      plus(+)
+    </button>
+  </div>
+</div>

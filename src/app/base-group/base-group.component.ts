@@ -1,14 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CoreBase, IUserContext } from '@infor-up/m3-odin';
+import { CounterComponent } from '../components/counter/counter.component';
 import { SearchComponent } from '../components/search/search.component';
 import { M3ApiService } from '../services/m3-api.service';
 
 @Component({
   selector: 'app-base-group',
   standalone: true,
-  imports: [CommonModule, MatGridListModule, SearchComponent],
+  imports: [
+    CommonModule,
+    MatGridListModule,
+    MatDividerModule,
+    SearchComponent,
+    CounterComponent,
+  ],
   providers: [M3ApiService],
   templateUrl: './base-group.component.html',
   styleUrl: './base-group.component.css',
@@ -35,27 +43,4 @@ export class BaseGroupComponent extends CoreBase implements OnInit {
       this.warehouseList = warehouses;
     });
   }
-
-  // loadWarehouseGroups() {
-  //   const rcd = new MIRecord();
-
-  //   // rcd['CONO'] = this.userContext.company;
-
-  //   const request: IMIRequest = {
-  //     program: 'CMS100MI',
-  //     transaction: 'LstWhsGroups',
-  //     record: rcd,
-  //   };
-
-  //   this._m3Service.execute(request).subscribe(
-  //     (response: IMIResponse) => {
-  //       // Handle the response which is of type IMIResponse
-  //       console.log(response);
-  //     },
-  //     (error: any) => {
-  //       // Handle any errors
-  //       console.error(error);
-  //     }
-  //   );
-  // }
 }

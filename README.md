@@ -33,33 +33,34 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 This project was generated with Odin CLI, a command line interface for developing M3 web applications.
 
 ```
-
 npm install @infor-up/m3-odin --save
 npm install @infor-up/m3-odin-angular --save
 npm install @infor-up/m3-odin-cli --save
-
 ```
 
 ```
-
-```
-
 # start with proxy
-
 ng serve --proxy-config proxy.conf.json
 
 # setup m3 url
-
 odin set m3-proxy https://be-dev.escal.local:32008
 
 # setup tenant
-
 odin set ion-proxy https://ionserver/ODIN_ION_PROXY_TARGET
 
 # start ng odin project
-
 odin serve
 
 ```
 
+## zustant with ng18
+
+```
+# important link
+https://github.com/JoaoPauloLousada/ngx-zustand
+
+# install zustant
+npm install ngx-zustand zustand
+or force
+npm install ngx-zustand zustand --legacy-peer-deps
 ```
