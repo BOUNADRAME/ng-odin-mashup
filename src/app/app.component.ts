@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CoreBase } from '@infor-up/m3-odin';
@@ -14,6 +15,7 @@ import { SearchComponent } from './components/search/search.component';
     M3OdinModule,
     BaseGroupComponent,
     SearchComponent,
+    HttpClientModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

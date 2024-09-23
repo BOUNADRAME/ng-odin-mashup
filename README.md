@@ -64,3 +64,10 @@ npm install ngx-zustand zustand
 or force
 npm install ngx-zustand zustand --legacy-peer-deps
 ```
+
+## UI
+
+```
+https://github.com/infor-cloud/m3-h5-sdk/blob/master/README.md
+https://github.com/infor-cloud/m3-h5-sdk/blob/master/cli/README-CLI.md
+```

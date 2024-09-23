@@ -43,4 +43,15 @@ export class BaseGroupComponent extends CoreBase implements OnInit {
       this.warehouseList = warehouses;
     });
   }
+
+  openM3Screen() {
+    this._m3ApiService.callM3Program('CRS610', 'LstWhsGroups', {}).subscribe(
+      (response) => {
+        console.log('M3 Screen opened:', response);
+      },
+      (error) => {
+        console.error('Error opening M3 screen:', error);
+      }
+    );
+  }
 }

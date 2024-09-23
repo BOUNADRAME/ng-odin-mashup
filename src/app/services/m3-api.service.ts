@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   CoreBase,
@@ -14,9 +15,12 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class M3ApiService extends CoreBase {
+  private baseUrl = '/m3api-rest'; // Matches the proxy entry in odin.json
+
   constructor(
     private _miService: MIService,
-    private _userService: UserService
+    private _userService: UserService,
+    private http: HttpClient
   ) {
     super('M3ApiService');
   }
@@ -56,5 +60,20 @@ export class M3ApiService extends CoreBase {
         return of();
       })
     );
+  }
+
+  // Example method to call an M3 screen
+  // Example to call an M3 program (CRS610)
+  callM3Program(
+    program: string,
+    transaction: string,
+    params: any
+  ): Observable<any> {
+    const url = `${this.baseUrl}/execute/${program}/${transaction}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.post(url, params, { headers });
   }
 }
